@@ -1,0 +1,24 @@
+{
+  "name": "befho2",
+  "version": "1.0.0",
+  "description": "\"# backEndFoundationsHandsOnTwo\"",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rburger27/backEndFoundationsHandsOnTwo.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rburger27/backEndFoundationsHandsOnTwo/issues"
+  },
+  "homepage": "https://github.com/rburger27/backEndFoundationsHandsOnTwo#readme",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "express": "^4.16.2"
+  }
+}
