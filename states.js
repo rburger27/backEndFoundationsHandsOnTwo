@@ -11,10 +11,29 @@ const states = [
   {name: 'Georgia', id: 'GA', population: '10.1 Million'},
   {name: 'North Carolina', id: 'NC', population: '10 Million'},
   {name: 'Michigan', id: 'MI', population: '9.9 Million'},
+  {name: 'Area 51', id: 'A51', population: 'Deadly Aliens'}
 ]
 
-router.get('/' , (req, res) => {
+router.get('/allStates' , (req, res) => {
   res.send(states)
+})
+
+router.get('/:id', (req, res) => {
+  for(let i = 0; i < states.length; i++){
+    if(states[i].id === req.params.id){
+      res.send(states[i]);
+    }
+  }
+})
+
+router.get('/', (req, res) => {
+  let state = req.query.secret;
+  console.log(state)
+for(let i = 0; i < states.length; i++){
+  if(states[i].id === req.query.secret){
+    res.send(states[i])
+    }
+  }
 })
 
 module.exports = router;
