@@ -14,26 +14,29 @@ const states = [
   {name: 'Area 51', id: 'A51', population: 'Deadly Aliens'}
 ]
 
-router.get('/allStates' , (req, res) => {
-  res.send(states)
+router.get('/' , (req, res) => {
+  res.json(states)
+})
+
+router.get('/hidden', (req, res) => {
+  const state = req.query.secret;
+  let result = {}
+  console.log(state)
+  for(let i = 0; i < states.length; i++){
+    if(states[i].id === req.query.secret){
+      result = states[i]
+    }
+  }
+  res.status(200).json(result)
 })
 
 router.get('/:id', (req, res) => {
   for(let i = 0; i < states.length; i++){
     if(states[i].id === req.params.id){
-      res.send(states[i]);
+      res.json(states[i]);
     }
   }
 })
 
-router.get('/', (req, res) => {
-  let state = req.query.secret;
-  console.log(state)
-for(let i = 0; i < states.length; i++){
-  if(states[i].id === req.query.secret){
-    res.send(states[i])
-    }
-  }
-})
 
 module.exports = router;
